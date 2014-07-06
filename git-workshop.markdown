@@ -1,135 +1,96 @@
-# Staging
+# Git History
 
-## Interactive Add
+* Linux Kernel Development
 
-````bash
-$> git add -i
-````
+<image here>
 
-## Patch Add
+ <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+</aside>
 
-````bash
-$> git add --patch
-````
+# Git Basics
 
-## Edit a hunk
+## Distributed Version Control
 
-````bash
-$> git add --patch
+* Complete history/copy of the repo
 
-[HUNK]
-e
-
-````
-
-# Changing Commits
-
-## Amend a commit
-
-````bash
-$> git commit --amend
-````
-
-## Fix a commit
-
-````bash
-$> git commit --fixup=<treeish>
-$> git rebase -i --autosquash <upstream-treeish>
-````
-
-# Rebase
-
-## Rules
-
-1. You do not rebase upstream commits.
-2. You <em> do not</em> rebase upstream commits.
-3. If something goes wrong <code>$> rebase --abort</code>
-4. Rebasing continues until all the patches have been applied.
-
-
-## What is it?
-
-* Allows you to change the parent commit of a sub-tree
-* e.g.
-
-````bash
-         A--B--C (topic)
-        /
-    D---E---F--G (master)
-
-    $> git rebase master topic
-
-                 A'--B'--C' (topic)
-                /
-    D---E---F--G (master)
-````
-
-## Syntax
+## Creating a Repo
 
 ```bash
-    $> git rebase <treeish-root>
+$> git init
 ```
+## Commit changes
 
-# A Rebasing Workflow
+## Git Areas
 
-## Advantages
+* Working Directory
+* Stage/Index
+* .git
 
-* Use <code>fetch</code> and <code>rebase</code> instead of pull.
-* Prevents unnecessary merges when multiple people are pushing commits to the same shared repository.
-* Allows conflicts to be addressed in the commit that causes them, not the merge.
-* Makes history look nice.
+## Task
 
-## Instead of
+* Create a new local repository
+* Add a README.md 
+* Create a commit
 
-````bash
-    $> git commit
-    $> git pull
-    ... git automatically merges ...
-    $> git push
-````
+# Examining history
 
-## which leads to a history that looks like:
+## Refering to commits
 
-````bash
-    *   af6fb5e | Merge branch 'master' of ../example-git-hist (HEAD, master) [S
-    |\
-    | *   a6ad928 | Merge branch 'master' of /home/smooney/Documents/sai/example
-    | |\
-    | * | 65da3b9 | add file 2
-    * | | 2107bdd | Add file3
-    | |/
-    |/|
-    * | 8bcbc54 | change 2
-    |/
-    * 30ae4ef | Change1
-````
+* SHA-1
+* branch name
+* Relative 
 
-## It could look like
+## git log
 
-````bash
-    * 65da3b9' | Add File 4
-    |
-    * 2107bdd' | Add file 3
-    |
-    * 8bcbc54 | Change 2
-    |
-    * 30ae4ef | Change 1
-````
+## git show
 
-## How do we get this?
+## Task
 
-* Rebase on the upstream version before pushing new patches
+* Explore the history of repo.
+* Look at recent commits
+* Look at the log message and diff for a specific commit
 
-````bash
-    $> git fetch origin
-    $> git rebase origin/master
-    $> git push
-````
+# Working with branches
 
-## Conflicts
+## Branching and merging
 
-* Git rebase forces you to handle any merge conflicts in the commit that caused it
-* This means that once you fix the commit (relative to master) it never happened.
-* Why drag around merge conflicts when they were only because you had not updated soon enough
+* Branches are lightweight and local
+* Switching between branches
+* Merging
+** Fastforward vs. Actual Merge
 
+## Task
 
+* Create a new branch
+* Checkout the branch
+* Make a commit
+* Switch back to master
+
+# Playing with others
+
+## Local vs. Remote repos
+
+* Commiting vs. Sharing
+* Pushing and Pulling
+* Cloning a repo
+* Adding a new remote
+* Refering to remotes
+* Tracking branches
+** Meaning
+** Pushing/Pulling from a remote
+** Choosing which remote to push/pull from
+
+## Task
+
+* Clone an existing existing
+* Add a new remote
+* Pull changes from a remote
+
+# Rebasing
+
+# Workflows
+
+# Tools
+
+# Running a local server

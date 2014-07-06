@@ -24,7 +24,7 @@ $> touch README.md
 ## Task
 
 * Create a new git repository
-* Add a READMEME file
+* Add a README file
 * Create the first commit for the repository
 
 ## Branching and merging

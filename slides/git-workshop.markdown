@@ -8,6 +8,10 @@
         Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 </aside>
 
+# Git Configuration
+
+## Telling git who you are
+
 # Git Basics
 
 ## Distributed Version Control
@@ -19,7 +23,12 @@
 ```bash
 $> git init
 ```
-## Commit changes
+
+## Adding changes
+
+## Commiting changes
+
+## Commit Messages
 
 ## Git Areas
 
@@ -27,11 +36,15 @@ $> git init
 * Stage/Index
 * .git
 
+## Remove staged changes
+
 ## Task
 
 * Create a new local repository
 * Add a README.md 
 * Create a commit
+
+## Git ignore
 
 # Examining history
 
@@ -67,6 +80,12 @@ $> git init
 * Make a commit
 * Switch back to master
 
+## Moving around the commit tree
+
+* Checkout
+* Checkout a non-branch
+* <code> $> git reset </code>
+
 # Playing with others
 
 ## Local vs. Remote repos
@@ -92,5 +111,7 @@ $> git init
 # Workflows
 
 # Tools
+
+## Bamboo/jira integration
 
 # Running a local server

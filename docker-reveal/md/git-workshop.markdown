@@ -252,18 +252,6 @@ Remotes and non-fastforwd merges when pushing
 
 
 
-# Workflows
-
-![Git logo](assets/git-logo.png)
-
-
-## Feature Branches
-
-
-## Multiple remotes
-
-
-
 # Intermediate commands
 
 ![Git logo](assets/git-logo.png)

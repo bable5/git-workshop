@@ -4,6 +4,7 @@
 
 
 * Centralized vs. Distributed
+* Commiting vs. Sharing
 * Easy Branches. Cheap Merges.
 * Fast
 * Egalitarian
@@ -27,12 +28,13 @@
 <li> Git </li>
 </ul>
 
-## Distrubuted Version Control
+
+## Version Control
 
 
-### Centralized Model
+## Centralized Model
 
-<img alt="Centralized model"></img>
+<img src="assets/centralized.svg" alt="Centralized model" />
 
 <aside class="notes"
 
@@ -42,9 +44,10 @@ Have to talk to the server for EVERYTHING (slow network, slow everything)
 
 </aside>
 
-### Distributed Model
 
-<img alt="Distrubuted model"></img>
+## Distributed Model
+
+<img src="assets/distributed.svg" alt="Centralized model" />
 
 <aside class="notes" No single server. Every copy is an equally valid. 
 

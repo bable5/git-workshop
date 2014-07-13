@@ -3,7 +3,6 @@
 ![Git Logo](assets/git-logo.png)
 
 
-
 * Centralized vs. Distributed
 * Easy Branches. Cheap Merges.
 * Fast
@@ -50,4 +49,6 @@ Have to talk to the server for EVERYTHING (slow network, slow everything)
 <aside class="notes" No single server. Every copy is an equally valid. 
 
 Groups working together still want a 'single source of truth'
+<br />
+Every copy has a complete history.
 </aside>

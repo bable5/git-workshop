@@ -1,12 +1,6 @@
-
-
-
 # Git Basics
 
-
-## Distributed Version Control
-
-* Complete history/copy of the repo
+![Git logo](assets/git-logo.png)
 
 
 ## Creating a Repo
@@ -15,33 +9,123 @@
 $> git init
 ```
 
+<aside class="notes">
+<ul>
+<li> A git repo is just folder.</li>
+</ul>
 
-## Adding changes
+
+## Task: Create a repo
+
+* Make a directory to hold you're repo
+* `cd` into the directory and run
+```bash
+$> git init
+$> ls -a
+```
+* What did `git init` do?
 
 
-## Commiting changes
+```bash
+$> tree .
+```
 
+![Git Tree](assets/tree-git-init.png)
 
-## Commit Messages
+<aside class="notes">
+Talk about
+<ul>
+<li> HEAD </li>
+<li> objects </li>
+</ul>
+</aside>
 
 
 ## Git Areas
 
-
-* Working Directory
-* Stage/Index
-* .git
+![](assets/local-operations.png)
 
 
-## Remove staged changes
+## Adding changes
+
+* Git tracks <em>content</em> not files
+    * Cannot commit an empty directory
+* Stage changes for commit with: 
+```bash
+$> git add <filename>
+```
+
+
+## Commiting changes
+
+* Only <em>content</em> in the staging area is committed.
+* Can split up changes across multiple commits.
+
+
+* Bring up an editor for the commit message
+
+```bash
+$> git commit
+```
+
+
+* Create a commit with a short message
+
+```bash
+$> git commit -m "commit message"
+```
+
+
+## Commit Messages
+
+* Git commits are more stylized the usual
+
+```bash
+Short subject (~80 characters)
+
+* Markdown style
+* detailed
+* list of changes
+```
+
+<aside class="notes">
+Why mention? Because lots of tools assume messages look like this and display accordingly.
+<br />
+Markdown not required, but lots of servers will display commit messages better if you use it.
+</aside>
 
 
 ## Task
 
+* Make a file, README.md and add some text to it.
+* Stage README.md for commit
+* Create a new commit
 
-* Create a new local repository
-* Add a README.md 
-* Create a commit
+
+## Remove staged changes
+
+```bash
+$> git reset HEAD <filename>
+```
+
+
+## Non-fastforward Merge
+
+![Merge two branches]()
+
+
+## Task: What has changed?
+
+* Change to files
+* Stage the changes from one of the files
+* Run:
+
+```bash
+$> git diff
+$> git diff --cached
+```
+
+What's the difference between the outputs?
 
 
 ## Git ignore
@@ -50,9 +134,10 @@ $> git init
 
 # Examining history
 
+![Git logo](assets/git-logo.png)
+
 
 ## Refering to commits
-
 
 * SHA-1
 * branch name
@@ -67,8 +152,7 @@ $> git init
 
 ## Task
 
-
-* Explore the history of repo.
+* Explore the history of a repo
 * Look at recent commits
 * Look at the log message and diff for a specific commit
 
@@ -76,18 +160,38 @@ $> git init
 
 # Working with branches
 
+![Git logo](assets/git-logo.png)
+
 
 ## Branching and merging
 
 
 * Branches are lightweight and local
 * Switching between branches
-* Merging
-** Fastforward vs. Actual Merge
+
+
+## Create a branch
+
+```bash
+$> git branch <branchname>
+```
+
+```bash
+$> git branch <branchname> <start-point>
+```
+
+
+## Switching to a branch
+
+```bash
+$> git checkout <treeish>
+```
+
+* Checkout makes the working directory look like the specified commit.
+* Will leave un-committed changes to the working directory
 
 
 ## Task
-
 
 * Create a new branch
 * Checkout the branch
@@ -95,16 +199,25 @@ $> git init
 * Switch back to master
 
 
-## Moving around the commit tree
+## Merging
+
+* Brings two seperate branches together
 
 
-* Checkout
-* Checkout a non-branch
-* <code> $> git reset </code>
+## Fastforward Merge
 
 
+![Fast Forward]()
 
-# Playing with others
+<aside class="notes">
+Remotes and non-fastforwd merges when pushing
+</aside>
+
+
+## Merge conflicts
+
+
+# Working with others
 
 
 ## Local vs. Remote repos
@@ -116,9 +229,9 @@ $> git init
 * Adding a new remote
 * Refering to remotes
 * Tracking branches
-** Meaning
-** Pushing/Pulling from a remote
-** Choosing which remote to push/pull from
+    * Meaning
+    * Pushing/Pulling from a remote
+    * Choosing which remote to push/pull from
 
 
 ## Task
@@ -129,20 +242,46 @@ $> git init
 * Pull changes from a remote
 
 
+## Local vs. Remote Branches
+
+
 
 # Rebasing
+
+![Git logo](assets/git-logo.png)
 
 
 
 # Workflows
 
+![Git logo](assets/git-logo.png)
 
 
-# Tools
+## Feature Branches
 
 
-## Bamboo/jira integration
+## Multiple remotes
 
 
 
-# Running a local server
+# Intermediate commands
+
+![Git logo](assets/git-logo.png)
+
+
+## Commiting
+
+Add some new content, or fix the commit message for the HEAD commit.
+
+```bash
+$> git commit --amend
+```
+
+
+Create a commit that will <em>fixup</em> another commit.
+
+```bash
+$> git commit --fixup=<treeish>
+$> git rebase -i --autosquash <treeish>
+```
+

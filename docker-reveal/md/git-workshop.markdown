@@ -217,21 +217,32 @@ Remotes and non-fastforwd merges when pushing
 ## Merge conflicts
 
 
+
 # Working with others
 
+![Git logo](assets/git-logo.png)
 
-## Local vs. Remote repos
 
+## Overview
 
+* Cloning a repo
+* Refering to remotes
+* Adding a new remote
 * Commiting vs. Sharing
 * Pushing and Pulling
-* Cloning a repo
-* Adding a new remote
-* Refering to remotes
 * Tracking branches
     * Meaning
     * Pushing/Pulling from a remote
     * Choosing which remote to push/pull from
+
+
+## Push
+
+
+## Pull
+
+
+## Fetch
 
 
 ## Task

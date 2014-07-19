@@ -24,11 +24,6 @@
 * Use an interactive rebase to put it on top master before merging.
 
 
-##
-
-TODO: Image of rebasing work flow here
-
-
 ## Multiple remotes
 
 * There's nothing special about any remote!

@@ -384,23 +384,60 @@ $> branch -d branch-name
 ## Overview
 
 * Cloning a repo
+* Commiting vs. Sharing
 * Refering to remotes
 * Adding a new remote
-* Commiting vs. Sharing
 * Pushing and Pulling
 * Tracking branches
     * Meaning
     * Pushing/Pulling from a remote
     * Choosing which remote to push/pull from
 
+## Cloning
+
+```bash
+$> git clone <src-repo> <dest-name>
+```
+
+* Cloning from a folder or a server is exactly the same.
+
+
+## Fetch
+
+* Grabs changes from a remote.
+* The changes have to be merged into a local branch
+
 
 ## Push
+
+* Sends changes to a remote
+
+```bash
+$> git push <remote-name>
+```
+
+```bash
+$> git push <remote-name> <my-branch>:<remote-branch>
+```
 
 
 ## Pull
 
+* Equivalent of a fetch followed by a merge
 
-## Fetch
+```bash
+$> git pull <remote-name>
+```
+
+
+## Remotes
+
+* Any other repo is refered as a remote
+* Can have multiple remotes and chose which one you push and pull from
+
+```bash
+$> git remote add <name> <path-to-remote>
+```
 
 
 ## Exercise
@@ -412,11 +449,40 @@ $> branch -d branch-name
 
 ## Local vs. Remote Branches
 
+* All branches are local!
+* Remote branches just refer to a branch name your repo thinks also exists on the remote
+
 
 
 # Rebasing
 
 ![Git logo](assets/git-logo.png)
+
+
+## Changing history
+
+* Rebasing changes the parent of commit or series of commits
+* Only rebase commits you haven't shared!
+
+
+![Before Rebase](assets/rebase-init.png)
+
+```bash
+$> git checkout experiment
+$> git rebase master
+```
+
+![After Rebase](assets/rebase-final.png)
+
+<small>http://git-scm.com/book/</small>
+
+
+![Merged Rebase](assets/rebase-merged.png)
+
+```bash
+$> git checkout master
+$> git merge experiment
+```
 
 
 

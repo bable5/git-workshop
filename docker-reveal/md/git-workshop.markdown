@@ -116,7 +116,7 @@ $> git reset HEAD <filename>
 
 ## Task: What has changed?
 
-* Change to files
+* Change two files
 * Stage the changes from one of the files
 * Run:
 

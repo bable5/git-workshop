@@ -46,7 +46,7 @@ Example config file.
 * Command aliases go in the <code>alias</code> section
 
 
-## Task: Add some aliases
+## Exercise: Add some aliases
 
 ```bash
 [alias]

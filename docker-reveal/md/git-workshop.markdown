@@ -1,3 +1,42 @@
+# Terminology 
+
+![Git logo](assets/git-logo.png)
+
+
+## SHA-1
+
+* <em>Everything</em> in git has a SHA-1
+* The SHA-1 is used to refer to everything
+
+<aside class="notes">
+<ul>
+<li>SHA-1 is 40 character string</li>
+<li>Unique (hand wave hash collisions</li>
+<li>Can refer to a SHA-1 by first 4-6 characters</li>
+</aside>
+
+
+## DAG
+
+* Git history forms a graph
+* No cycles
+* Can always go back in history
+
+
+## Repo
+
+* Any folder with a .git directory and associated files
+* Nothing special.
+
+<aside class="notes">
+<ul>
+<li>Doesn't need a dedicated server</li>
+<li>Can always start local and share or not</li>
+</ul>
+</aside>
+
+
+
 # Git Basics
 
 ![Git logo](assets/git-logo.png)
@@ -15,7 +54,7 @@ $> git init
 </ul>
 
 
-## Task: Create a repo
+## Exercise: Create a repo
 
 * Make a directory to hold you're repo
 * `cd` into the directory and run
@@ -44,6 +83,13 @@ Talk about
 ## Git Areas
 
 ![](assets/local-operations.png)
+
+
+## What has changed?
+
+```bash
+$> git status
+```
 
 
 ## Adding changes
@@ -95,26 +141,14 @@ Markdown not required, but lots of servers will display commit messages better i
 </aside>
 
 
-## Task
+## Exercise
 
 * Make a file, README.md and add some text to it.
 * Stage README.md for commit
 * Create a new commit
 
 
-## Remove staged changes
-
-```bash
-$> git reset HEAD <filename>
-```
-
-
-## Non-fastforward Merge
-
-![Merge two branches]()
-
-
-## Task: What has changed?
+## Exercise: What has changed?
 
 * Change two files
 * Stage the changes from one of the files
@@ -128,7 +162,11 @@ $> git diff --cached
 What's the difference between the outputs?
 
 
-## Git ignore
+## Remove staged changes
+
+```bash
+$> git reset HEAD <filename>
+```
 
 
 
@@ -139,22 +177,57 @@ What's the difference between the outputs?
 
 ## Refering to commits
 
-* SHA-1
-* branch name
-* Relative 
+* Treeish Things
+    * SHA-1
+    * Branch Name
+    * Refspec
+        * treeish^
+        * treeish~3
 
 
 ## git log
 
 
+```bash
+$> git log
+$> git log --oneline
+```
+<aside class="notes">
+This is everything
+</aside>
+
+
+```bash
+git log -5 <treeish>
+```
+<aside class="notes">
+Last 5 commits. Lots flags for log. Refer 
+</aside>
+
+
+```bash
+git log --graph --oneline
+```
+<aside class="notes">
+Mention adding this one to their aliases as a 'hist'
+</aside>
+
+
 ## git show
 
+* Shows the log message and changes for a commit
 
-## Task
+```bash
+$> git show
+$> git show --oneline
+```
+
+
+## Exercise
 
 * Explore the history of a repo
 * Look at recent commits
-* Look at the log message and diff for a specific commit
+* Look at the log message and changes for a specific commit
 
 
 
@@ -165,9 +238,11 @@ What's the difference between the outputs?
 
 ## Branching and merging
 
-
 * Branches are lightweight and local
-* Switching between branches
+    * Just a pointer to a commit
+* Switching between branches is easy
+    * Change where HEAD points
+* <code>master</code> is nothing special
 
 
 ## Create a branch
@@ -180,6 +255,10 @@ $> git branch <branchname>
 $> git branch <branchname> <start-point>
 ```
 
+![new branch](assets/create-branch.png)
+
+<small>http://git-scm.com/book/en/</small>
+
 
 ## Switching to a branch
 
@@ -191,7 +270,14 @@ $> git checkout <treeish>
 * Will leave un-committed changes to the working directory
 
 
-## Task
+## Commiting to a branch
+
+![commit](assets/branch-commit.png)
+
+<small>http://git-scm.com/book/en/</small>
+
+
+## Exercise
 
 * Create a new branch
 * Checkout the branch
@@ -202,19 +288,91 @@ $> git checkout <treeish>
 ## Merging
 
 * Brings two seperate branches together
+* Should always have local changes committed before merging
+
+![hotfix](assets/hotfix.png)
+
+<aside class="notes">
+Suppose a hot fix for prod needs to happen.
+How do that?
+</aside>
+
+```bash
+$> git branch master hotfix
+$> git checkout hotfix
+...
+$> git commit -m "Fix prod"
+```
 
 
-## Fastforward Merge
+## Fast-forward Merge
 
+![fast-forward merge](assets/hotfix-merge.png)
 
-![Fast Forward]()
+<small>http://git-scm.com/book/en/</small>
 
 <aside class="notes">
 Remotes and non-fastforwd merges when pushing
 </aside>
 
+```bash
+$> git checkout master
+$> git merge hotfix
+```
+
+
+## Non-fastforward Merge
+
+![commit](assets/iss53merge.png)
+
+<small>http://git-scm.com/book/en/</small>
+
+```bash
+$> git merge iss53
+```
+
+<aside class="notes">
+<li> Touch on fast-forward merges and pushing</li>
+</aside>
+
 
 ## Merge conflicts
+
+* Resolve the conflicts
+* Add the resolvd files to the index
+* Run:
+
+```bash
+$> git commit
+```
+
+
+## Aborting a merge
+
+* If the merge goes badly...
+
+```bash
+$> git commit --abort
+```
+
+<aside class="notes">
+Resets the working directory to the commit before the merge started.
+</aside>
+
+
+## Deleting branches
+
+* Delete a fully merged branch
+
+```bash
+$> branch -d branch-name
+```
+
+* Force a delete
+
+```bash
+$> branch -d branch-name
+```
 
 
 
@@ -245,10 +403,9 @@ Remotes and non-fastforwd merges when pushing
 ## Fetch
 
 
-## Task
+## Exercise
 
-
-* Clone an existing existing
+* Clone an existing repo
 * Add a new remote
 * Pull changes from a remote
 

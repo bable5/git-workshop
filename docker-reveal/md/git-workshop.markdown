@@ -365,13 +365,13 @@ Resets the working directory to the commit before the merge started.
 * Delete a fully merged branch
 
 ```bash
-$> branch -d branch-name
+$> git -d branch-name
 ```
 
 * Force a delete
 
 ```bash
-$> branch -d branch-name
+$> git -D branch-name
 ```
 
 

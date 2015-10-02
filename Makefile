@@ -1,4 +1,7 @@
+#DOCKER=fig
+DOCKER=docker-compose
+
 run:
-	fig rm --force
-	fig build
-	fig up
+	$(DOCKER) rm --force
+	$(DOCKER) build
+	$(DOCKER) up

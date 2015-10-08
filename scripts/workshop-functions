@@ -1,0 +1,11 @@
+function random-changes {
+    echo "Number of changes: $1"
+    for (( i=1; i<=$1; i++ )) 
+    do 
+       filename="file$i"
+       echo "Change for commit $i" >> "$filename"
+       git add "$filename"
+       git commit -m "Random change $i"
+    done
+}
+

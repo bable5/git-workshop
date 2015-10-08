@@ -1,3 +1,11 @@
+#About Me
+
+
+* Email: smooney@sourceallies.com
+* GitHub:  bable5
+
+
+
 #Git Themes
 
 ![Git Logo](assets/git-logo.png)

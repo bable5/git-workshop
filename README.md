@@ -1,7 +1,12 @@
 View the presentation
 ====
 
-Ensure fig and docker are installed. Run:
+Ensure [docker](https://docs.docker.com/engine/installation/) and
+[docker-compose](https://docs.docker.com/compose/install/) are installed.
+The `requirements.txt` file can be used to install`docker-compose`
+into a virtual environment.
+
+Run:
 
 ```bash
 $> make

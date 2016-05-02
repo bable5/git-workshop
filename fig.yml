@@ -1,7 +1,0 @@
-slideshow:
-    build: docker-reveal
-    ports:
-        - 8000:8000
-    volumes:
-        - docker-reveal/md:/revealjs/md
-        - docker-reveal/assets:/revealjs/assets

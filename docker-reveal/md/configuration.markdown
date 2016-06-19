@@ -52,6 +52,7 @@ Example config file.
 [alias]
     stat = status
     co = checkout
+    hist = log --graph --oneline
 ```
 
 <aside class="notes">

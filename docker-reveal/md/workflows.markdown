@@ -23,6 +23,16 @@
 * Make it is messy as you want.
 * Use an interactive rebase to put it on top master before merging.
 
+## Telling a story
+
+* Commits don't have to be ordered by time
+* Rebasing allows you to checkpoint all work and then put it back together
+  in an order that makes logical sense.
+
+<aside class="notes">
+Talk about how Surendra and I work at Deere
+</aside>
+
 
 ## Multiple remotes
 
@@ -33,5 +43,5 @@
 <li> Can have as many as you want</li>
 <li> Can be anywhere. Local directory, remote server </li>
 </ul>
-
+</aside>
 

@@ -5,6 +5,7 @@
 
 ## SHA-1
 
+* <code>17b1e2aaab76104972a1af593b5e5c4e10bdeee8</code>
 * <em>Everything</em> in git has a SHA-1
 * The SHA-1 is used to refer to everything
 
@@ -34,6 +35,26 @@
 <li>Can always start local and share or not</li>
 </ul>
 </aside>
+
+
+
+# Git Commands
+
+![Git logo](assets/git-logo.png)
+
+
+<table>
+<tr>
+<td>init</td><td>add</td><td>commit</td>
+</tr>
+</tr>
+<td>branch</td><td>merge</td><td>pull</td>
+</tr>
+<tr>
+<td>fetch</td><td>rebase</td><td>log</td>
+</tr>
+<td>remote</td><td>cherry-pick</td><td>reset</td>
+</table>
 
 
 
@@ -226,6 +247,11 @@ $> git show --oneline
 ## Exercise
 
 * Explore the history of a repo
+
+```bash
+$> git clone https://github.com/bable5/git-workshop.git
+```
+
 * Look at recent commits
 * Look at the log message and changes for a specific commit
 
@@ -393,6 +419,7 @@ $> git -D branch-name
     * Pushing/Pulling from a remote
     * Choosing which remote to push/pull from
 
+
 ## Cloning
 
 ```bash
@@ -406,6 +433,10 @@ $> git clone <src-repo> <dest-name>
 
 * Grabs changes from a remote.
 * The changes have to be merged into a local branch
+
+<aside class="notes">
+Talk about where the changes live.
+</aside>
 
 
 ## Push
@@ -491,6 +522,14 @@ $> git merge experiment
 ![Git logo](assets/git-logo.png)
 
 
+## Adding changes
+
+```bash
+$> git add -i
+$> git add --patch <filename>
+```
+
+
 ## Commiting
 
 Add some new content, or fix the commit message for the HEAD commit.
@@ -507,3 +546,32 @@ $> git commit --fixup=<treeish>
 $> git rebase -i --autosquash <treeish>
 ```
 
+
+## Checkout
+
+```bash
+$> git co <sha-1> <filename>
+```
+
+<aside class="notes">
+<ul>
+<li>Can check out a file you don't have from another branch</li>
+</ul>
+</aside>
+
+
+## Rebase interactive
+
+```bash
+$> git rebase -i <commit>
+```
+
+Allows you to reorder, combine, delete, or edit each commit.
+
+
+## Exercise: 
+
+* Change the order of commits
+* Remove a commit from the histery
+* Edit a commit message
+* Combine two commits together

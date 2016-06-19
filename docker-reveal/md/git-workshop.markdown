@@ -56,7 +56,7 @@ $> git init
 
 ## Exercise: Create a repo
 
-* Make a directory to hold you're repo
+* Make a directory to hold your repo
 * `cd` into the directory and run
 ```bash
 $> git init

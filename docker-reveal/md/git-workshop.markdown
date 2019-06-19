@@ -1,4 +1,4 @@
-# Terminology 
+# Terminology
 
 ![Git logo](assets/git-logo.png)
 
@@ -117,7 +117,7 @@ $> git status
 
 * Git tracks <em>content</em> not files
     * Cannot commit an empty directory
-* Stage changes for commit with: 
+* Stage changes for commit with:
 ```bash
 $> git add <filename>
 ```
@@ -222,7 +222,7 @@ This is everything
 git log -5 <treeish>
 ```
 <aside class="notes">
-Last 5 commits. Lots flags for log. Refer 
+Last 5 commits. Lots flags for log. Refer
 </aside>
 
 
@@ -569,7 +569,7 @@ $> git rebase -i <commit>
 Allows you to reorder, combine, delete, or edit each commit.
 
 
-## Exercise: 
+## Exercise:
 
 * Change the order of commits
 * Remove a commit from the histery

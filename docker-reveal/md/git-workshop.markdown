@@ -365,7 +365,7 @@ $> git merge iss53
 ## Merge conflicts
 
 * Resolve the conflicts
-* Add the resolvd files to the index
+* Add the resolved files to the index
 * Run:
 
 ```bash
